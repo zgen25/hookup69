@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Find Local Singles Now - Exclusive Dating Offer</title>
+    <link rel="preconnect" href="https://ipapi.co">
+    <link rel="preconnect" href="https://randomuser.me">
+    <link rel="preconnect" href="https://i.imgur.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            color: white;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://pornexplosion.com/assets/adultfriendfinder_members-208bf516822776b3d9194b1255a8ae4bbf902ed20f038a5f2057c5ecfcc8ef1e.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+            animation: subtleZoom 30s ease-in-out infinite alternate;
+        }
+        @keyframes subtleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .couple-img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 25px;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: white;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        .btn {
+            padding: 18px 25px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            margin: 25px 0;
+            background: linear-gradient(to right, #FF416C, #FF4B2B);
+            color: white;
+            box-shadow: 0 5px 25px rgba(255, 75, 43, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: btnShine 3s infinite;
+        }
+        @keyframes btnShine {
+            100% { transform: translateX(100%); }
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(255, 75, 43, 0.8);
+        }
+        .offer-progress {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .offer-progress-bar {
+            height: 100%;
+            width: 85%;
+            background: linear-gradient(to right, #FF416C, #FF4B2B);
+            border-radius: 4px;
+            animation: progressPulse 2s infinite;
+        }
+        @keyframes progressPulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .live-counter {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FF4B2B;
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(255,75,43,0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255,75,43,0.3);
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .country-flag {
+            font-size: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .mini-match-feed {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 280px;
+            z-index: 1000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .match-notification {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #ff4d6d;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            animation: slideUp 0.5s ease-out, fadeOut 0.5s ease-in 4.5s forwards;
+            transform-origin: bottom left;
+            min-height: 80px;
+            box-sizing: border-box;
+        }
+        .match-avatars {
+            position: relative;
+            margin-right: 15px;
+            min-width: 70px;
+        }
+        .match-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .match-avatar:last-child {
+            position: absolute;
+            left: 30px;
+            top: 0;
+        }
+        .match-details {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .match-text {
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .match-location {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .match-location::before {
+            content: "📍";
+            margin-right: 5px;
+            font-size: 11px;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+        .exit-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .exit-popup > div {
+            background: rgba(0,0,0,0.9);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #FF4B2B;
+            animation: fadeIn 0.3s forwards;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+                border-radius: 12px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .btn {
+                font-size: 18px;
+                padding: 16px 20px;
+            }
+            .live-counter {
+                font-size: 22px;
+                padding: 12px;
+            }
+            .trust-badge {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            .mini-match-feed {
+                width: calc(100% - 40px);
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <div class="offer-progress">
+            <div class="offer-progress-bar"></div>
+        </div>
+
+        <img src="https://freefuckbook.app/images/fuckapp-logo-white.png" alt="Happy Couple" class="couple-img">
+        <h1 id="title">🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!</h1>
+        <p id="description">We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.</p>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#4CAF50">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>Verified Members</span>
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#2196F3">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                <span>Secure Dating</span>
+            </div>
+        </div>
+
+        <button class="btn" id="cta-button" onclick="redirectToOffer()" aria-label="Join now to find your match">
+            <span id="button-text">JOIN NOW - FIND YOUR MATCH</span>
+        </button>
+
+        <div class="live-counter">
+            🔥 <span id="active-users">1274</span> people searching now!
+        </div>
+
+        <div class="loading" id="loading">
+            <p>Checking your location...</p>
+        </div>
+    </div>
+
+    <div class="mini-match-feed"></div>
+
+    <script>
+        // Country to offer URL mapping
+        const offerUrls = {
+            'IT': { url: 'https://cjdahag.gettopost.com/c/72f5cc35ffba7', flag: '🇮🇹' },
+            'ES': { url: 'https://cjdahag.gettopost.com/c/0d917d83cc8b3', flag: '🇪🇸' },
+            'FR': { url: 'https://cjdahag.trckoffer.com/c/864c0d5abf439', flag: '🇫🇷' },
+            'AU': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇦🇺' },
+            'CA': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇨🇦' },
+            'CH': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇨🇭' },
+            'DE': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇩🇪' },
+            'NZ': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇳🇿' },
+            'UK': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇬🇧' },
+            'US': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇺🇸' },
+            'IE': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇮🇪' }
+        };
+        
+        // Country to content mapping
+        const contentTranslations = {
+            'IT': {
+                title: "🚨 OFFERTA ESCLUSIVA: Trova Single Locali Ora!",
+                description: "Stiamo connettendo migliaia di single nella tua zona! Clicca qui sotto per vedere chi ti aspetta.",
+                button: "ISCRIVITI ORA - TROVA LA TUA ANIMA GEMELLA"
+            },
+            'ES': {
+                title: "🚨 OFERTA EXCLUSIVA: ¡Encuentra Solteros Locales Ahora!",
+                description: "¡Estamos conectando a miles de solteros en tu área! Haz clic abajo para ver quién está esperando conocerte.",
+                button: "ÚNETE AHORA - ENCUENTRA TU PAREJA"
+            },
+            'FR': {
+                title: "🚨 OFFRE EXCLUSIVE : Rencontrez des Célibataires Locaux Maintenant !",
+                description: "Nous connectons des milliers de célibataires dans votre région ! Cliquez ci-dessous pour voir qui vous attend.",
+                button: "REJOIGNEZ MAINTENANT - TROUVEZ VOTRE MATCH"
+            },
+            'DE': {
+                title: "🚨 EXKLUSIVES ANGEBOT: Finde jetzt lokale Singles!",
+                description: "Wir verbinden Tausende von Singles in Ihrer Nähe! Klicken Sie unten, um zu sehen, wer Sie kennenlernen möchte.",
+                button: "JETZT MITMACHEN - FINDEN SIE IHREN PARTNER"
+            },
+            'EN': {
+                title: "🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!",
+                description: "We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.",
+                button: "JOIN NOW - FIND YOUR MATCH"
+            }
+        };
+        
+        const defaultContent = contentTranslations['EN'];
+        let currentOffer = null;
+        
+        function detectCountry() {
+            document.getElementById('loading').style.display = 'block';
+            
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country;
+                    currentOffer = offerUrls[countryCode] || { 
+                        url: 'https://cjdahag.pixls.one/p/Ve0JG',
+                        flag: '🌎' 
+                    };
+                    updatePageContent(countryCode);
+                })
+                .catch(error => {
+                    console.error('Error detecting country:', error);
+                    currentOffer = { 
+                        url: 'https://cjdahag.pixls.one/p/Ve0JG',
+                        flag: '🌎' 
+                    };
+                    updatePageContent('EN');
+                })
+                .finally(() => {
+                    document.getElementById('loading').style.display = 'none';
+                });
+        }
+        
+        function updatePageContent(countryCode) {
+            const content = contentTranslations[countryCode] || defaultContent;
+            document.getElementById('title').textContent = content.title;
+            document.getElementById('description').textContent = content.description;
+            
+            const button = document.getElementById('cta-button');
+            const buttonText = document.getElementById('button-text');
+            buttonText.textContent = content.button;
+            
+            if (currentOffer.flag) {
+                const flagSpan = document.createElement('span');
+                flagSpan.className = 'country-flag';
+                flagSpan.textContent = currentOffer.flag;
+                button.insertBefore(flagSpan, buttonText);
+            }
+        }
+        
+        function redirectToOffer() {
+            const btn = document.getElementById('cta-button');
+            btn.innerHTML = '<span class="loader"></span> Redirecting...';
+            btn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                window.location.href = currentOffer?.url || 'https://cjdahag.gettopost.com/c/1320abc6aa04e';
+            }, 500);
+        }
+
+        // Match Feed
+        const CONFIG = {
+            maleNames: ["James", "David", "Michael", "Daniel", "Matthew", "Christopher", "Robert", "John", "William", "Joseph"],
+            femaleNames: ["Emma", "Olivia", "Sophia", "Ava", "Isabella", "Mia", "Charlotte", "Amelia", "Harper", "Evelyn"],
+            locations: ["New York", "Chicago", "Los Angeles", "Miami", "Seattle", "Rome", "Milan", "Naples", "Madrid", "Barcelona", "Valencia", "Paris", "Marseille", "Lyon", "Sydney", "Darwin", "Brisbane", "Toronto", "Vancouver", "Berlin", "Munich", "London", "Manchester"],
+            apiEndpoint: "https://randomuser.me/api/",
+            fallbackMalePhoto: "https://i.imgur.com/mW3KEQa.jpg",
+            fallbackFemalePhoto: "https://i.imgur.com/Jf6eYbE.jpg",
+            displayDuration: 5000,
+            minInterval: 5000,
+            maxInterval: 8000
+        };
+
+        const photoCache = {
+            male: null,
+            female: null
+        };
+
+        async function fetchUserPhoto(gender) {
+            try {
+                const response = await fetch(`${CONFIG.apiEndpoint}?gender=${gender}&inc=picture&noinfo`);
+                const data = await response.json();
+                return data.results[0].picture.medium;
+            } catch (error) {
+                return gender === 'male' ? CONFIG.fallbackMalePhoto : CONFIG.fallbackFemalePhoto;
+            }
+        }
+
+        async function getPhoto(gender) {
+            if (photoCache[gender]) return photoCache[gender];
+            photoCache[gender] = await fetchUserPhoto(gender);
+            return photoCache[gender];
+        }
+
+        async function createMatchNotification() {
+            const maleFirst = Math.random() > 0.5;
+            const maleName = CONFIG.maleNames[Math.floor(Math.random() * CONFIG.maleNames.length)];
+            const femaleName = CONFIG.femaleNames[Math.floor(Math.random() * CONFIG.femaleNames.length)];
+            const location = CONFIG.locations[Math.floor(Math.random() * CONFIG.locations.length)];
+            const matchTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+            const [malePhoto, femalePhoto] = await Promise.all([
+                getPhoto('male'),
+                getPhoto('female')
+            ]);
+
+            return `
+                <div class="match-notification">
+                    <div class="match-avatars">
+                        <img src="${maleFirst ? malePhoto : femalePhoto}" alt="User" class="match-avatar">
+                        <img src="${maleFirst ? femalePhoto : malePhoto}" alt="User" class="match-avatar">
+                    </div>
+                    <div class="match-details">
+                        <div class="match-text">New match near ${location}!</div>
+                        <div class="match-location">${Math.floor(Math.random() * 15) + 1} km away • ${matchTime}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function showNewMatch() {
+            const feed = document.querySelector('.mini-match-feed');
+            const notificationHTML = await createMatchNotification();
+            feed.innerHTML = notificationHTML;
+            
+            setTimeout(() => {
+                photoCache.male = null;
+                photoCache.female = null;
+                feed.innerHTML = '';
+            }, CONFIG.displayDuration);
+        }
+
+        function initMatchFeed() {
+            setTimeout(showNewMatch, 1000);
+            
+            const showNextMatch = () => {
+                showNewMatch();
+                const delay = Math.random() * (CONFIG.maxInterval - CONFIG.minInterval) + CONFIG.minInterval;
+                setTimeout(showNextMatch, delay);
+            };
+            
+            setTimeout(showNextMatch, CONFIG.maxInterval);
+            getPhoto('male');
+            getPhoto('female');
+        }
+
+        function updateUserCounter() {
+            const baseUsers = new Date().getHours() >= 18 ? 2500 : 1500;
+            setInterval(() => {
+                const counter = document.getElementById('active-users');
+                const current = parseInt(counter.textContent);
+                const target = baseUsers + Math.floor(Math.random() * 20);
+                const increment = target > current ? 1 : -1;
+                
+                let count = current;
+                const animate = () => {
+                    count += increment;
+                    counter.textContent = count;
+                    if (count !== target) requestAnimationFrame(animate);
+                };
+                animate();
+            }, 3000);
+        }
+
+        function setupExitIntent() {
+            if (window.innerWidth > 768) {
+                document.addEventListener('mouseout', (e) => {
+                    if (!e.toElement && !e.relatedTarget && !sessionStorage.getItem('exitShown')) {
+                        sessionStorage.setItem('exitShown', 'true');
+                        showExitOffer();
+                    }
+                });
+            }
+        }
+
+        function showExitOffer() {
+            const exitDiv = document.createElement('div');
+            exitDiv.className = 'exit-popup';
+            exitDiv.innerHTML = `
+                <div>
+                    <h3>Wait! Don't Miss Your Matches</h3>
+                    <p>${Math.floor(Math.random() * 50) + 100} people in your area clicked in the last 5 minutes</p>
+                    <button class="btn" onclick="redirectToOffer()">Show Me Now</button>
+                </div>
+            `;
+            document.body.appendChild(exitDiv);
+            setTimeout(() => exitDiv.style.opacity = '1', 10);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            detectCountry();
+            initMatchFeed();
+            updateUserCounter();
+            setupExitIntent();
+            
+            setTimeout(() => {
+                document.getElementById('cta-button').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center'
+                });
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
