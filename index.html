@@ -1,210 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Find Local Singles - Secure & Real</title>
-  <style>
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;}
-    body {
-      color: #fff;
-      background: #000;
-      overflow-x: hidden;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Find Local Singles Now - Exclusive Dating Offer</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
 
-    /* 🔧 Scrolling Background Fix */
-    .bg-slide {
-      position: fixed;
-      top: 0; left: 0;
-      width: 200%;
-      height: 100%;
-      background: url('https://pornexplosion.com/assets/adultfriendfinder_members-208bf516822776b3d9194b1255a8ae4bbf902ed20f038a5f2057c5ecfcc8ef1e.jpg') repeat-x center center;
-      background-size: auto 100%;
-      animation: bgScroll 60s linear infinite;
-      z-index: -1;
-    }
-    @keyframes bgScroll {
-      0% {transform: translateX(0);}
-      100% {transform: translateX(-50%);}
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            color: white;
+        }
 
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: -1;
-    }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%; /* Double width for smooth scrolling */
+            height: 100%;
+            background-image: url('https://pornexplosion.com/assets/adultfriendfinder_members-208bf516822776b3d9194b1255a8ae4bbf902ed20f038a5f2057c5ecfcc8ef1e.jpg');
+            background-size: auto;
+            background-position: center;
+            background-repeat: repeat;
+            z-index: -2;
+            animation: scrollBackground 20s linear infinite;
+        }
 
-    .container {
-      max-width: 500px;
-      margin: 60px auto;
-      padding: 20px;
-      background: rgba(0,0,0,0.85);
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(255,75,43,0.3);
-    }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: -1;
+        }
 
-    .couple-img {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto 20px;
-      border-radius: 10px;
-    }
+        @keyframes scrollBackground {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-    h1 {
-      font-size: 24px;
-      color: #FF416C;
-      margin-bottom: 10px;
-    }
-    p {font-size: 16px; margin-bottom: 18px; line-height: 1.5;}
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
 
-    /* ✅ Visual Countdown Progress Bar */
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: #333;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 15px;
-    }
-    .progress-fill {
-      height: 100%;
-      width: 0;
-      background: #FF4B2B;
-      animation: fillTimer 300s linear forwards;
-    }
-    @keyframes fillTimer {
-      0% { width: 0; }
-      100% { width: 100%; }
-    }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
 
-    .btn {
-      padding: 14px 20px;
-      background: linear-gradient(to right,#FF416C,#FF4B2B);
-      border: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 40px;
-      font-size: 16px;
-      width: 100%;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(255,75,43,0.4);
-    }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-align: center;
+        }
 
-    /* 🧲 Sticky CTA for Mobile */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #000;
-      padding: 15px 10px;
-      border-top: 1px solid #333;
-      z-index: 999;
-      display: none;
-    }
-    .sticky-cta .btn {max-width: 500px; margin: 0 auto;}
+        .couple-img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 25px;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
 
-    .testimonials {
-      background: #111;
-      border-radius: 10px;
-      padding: 12px 15px;
-      font-size: 14px;
-      margin-top: 20px;
-      color: #ccc;
-    }
-    .testimonials p {margin-bottom: 10px;}
+        .btn {
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #FF416C, #FF4B2B);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+        }
 
-    @media(max-width: 600px) {
-      .container {margin: 20px 10px;}
-      h1 {font-size: 20px;}
-      .sticky-cta {display: block;}
-    }
-  </style>
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6);
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .country-flag {
+            font-size: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Social Proof Styles */
+        .social-proof-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-proof {
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            animation: fadeIn 1s;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 10px;
+            border: 2px solid #FF4B2B;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .live-counter {
+            margin-top: 15px;
+          	font-size: 35px;
+            font-weight: bold;
+            color: #FF4B2B;
+        }
+
+        /* Match Feed Styles */
+        .mini-match-feed {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 280px;
+            z-index: 1000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .match-notification {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #ff4d6d;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            animation: slideUp 0.5s ease-out, fadeOut 0.5s ease-in 4.5s forwards;
+            transform-origin: bottom left;
+            min-height: 80px;
+            box-sizing: border-box;
+        }
+
+        .match-avatars {
+            position: relative;
+            margin-right: 15px;
+            min-width: 70px;
+        }
+
+        .match-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .match-avatar:last-child {
+            position: absolute;
+            left: 30px;
+            top: 0;
+        }
+
+        .match-details {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .match-text {
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .match-location {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .match-location::before {
+            content: "📍";
+            margin-right: 5px;
+            font-size: 11px;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            
+            .mini-match-feed {
+                width: calc(100% - 40px);
+                left: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="bg-slide"></div>
-  <div class="overlay"></div>
-
-  <div class="container" id="main">
-    <img src="https://freefuckbook.app/images/fuckapp-logo-white.png" alt="Logo" class="couple-img" />
-    <h1 id="title">💘 Find Local Singles Now!</h1>
-    <p id="description">Thousands are waiting to connect with real people near you. It’s 100% free to join and explore matches.</p>
-
-    <div class="progress-bar"><div class="progress-fill"></div></div>
-
-    <button class="btn" onclick="redirectToOffer()">👉 JOIN NOW - SEE SINGLES</button>
-
-    <div class="testimonials">
-      <p>“Met someone real within 24 hours! 😍” — Julia, 🇺🇸</p>
-      <p>“Thought it was fake. It’s not. 🔥” — Marco, 🇮🇹</p>
+    <div class="container" id="main-container">
+        <img src="https://freefuckbook.app/images/fuckapp-logo-white.png" alt="Happy Couple" class="couple-img">
+        <h1 id="title">🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!</h1>
+        <p id="description">We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.</p>
+        
+        <button class="btn" id="cta-button" onclick="redirectToOffer()">
+            <span id="button-text">JOIN NOW - FIND YOUR MATCH</span>
+        </button>
+        
+        <div class="loading" id="loading">
+            <p>Checking your location...</p>
+        </div>
     </div>
-  </div>
 
-  <div class="sticky-cta">
-    <button class="btn" onclick="redirectToOffer()">❤️ Meet Singles Now</button>
-  </div>
+    <div class="social-proof-container">
+            <div class="live-counter">
+                <span>🔥 <span id="active-users">1274</span> people searching now!</span>
+        </div>
+    </div>
 
-  <script>
-    const offerUrls = {
-      'IT': 'https://cjdahag.gettopost.com/c/72f5cc35ffba7',
-      'ES': 'https://cjdahag.gettopost.com/c/0d917d83cc8b3',
-      'FR': 'https://cjdahag.trckoffer.com/c/864c0d5abf439',
-      'AU': 'https://cjdahag.trckoffer.com/c/525601f705c5e',
-      'CA': 'https://cjdahag.trckoffer.com/c/525601f705c5e',
-      'CH': 'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-      'DE': 'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-      'NZ': 'https://cjdahag.trckoffer.com/c/525601f705c5e',
-      'UK': 'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-      'US': 'https://cjdahag.trckoffer.com/c/525601f705c5e',
-      'IE': 'https://cjdahag.trckoffer.com/c/525601f705c5e'
-    };
+    <div class="mini-match-feed">
+        <!-- Match notifications will appear here -->
+    </div>
 
-    const translations = {
-      'FR': {
-        title: "💘 Rencontrez des Célibataires Locaux !",
-        description: "Des milliers de personnes vous attendent pour discuter et plus si affinité. Rejoignez maintenant, c'est gratuit !"
-      },
-      'IT': {
-        title: "💘 Trova Single Vicino a Te!",
-        description: "Migliaia di utenti reali stanno aspettando. Unisciti ora, è gratis e veloce!"
-      },
-      'ES': {
-        title: "💘 Encuentra Solteros Reales Cerca!",
-        description: "Miles de personas están listas para conocerte. ¡Únete gratis hoy!"
-      }
-    };
-
-    let countryCode = 'US';
-
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => {
-        countryCode = data.country || 'US';
-        if (translations[countryCode]) {
-          document.getElementById("title").textContent = translations[countryCode].title;
-          document.getElementById("description").textContent = translations[countryCode].description;
+    <script>
+        // Country to offer URL mapping (using highest payout where multiple exist)
+        const offerUrls = {
+            'IT': { url: 'https://cjdahag.gettopost.com/c/72f5cc35ffba7', flag: '🇮🇹' },
+            'ES': { url: 'https://cjdahag.gettopost.com/c/0d917d83cc8b3', flag: '🇪🇸' },
+            'FR': { url: 'https://cjdahag.trckoffer.com/c/864c0d5abf439', flag: '🇫🇷' },
+            'AU': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇦🇺' },
+            'CA': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇨🇦' },
+            'CH': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇨🇭' },
+            'DE': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇩🇪' },
+            'NZ': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇳🇿' },
+            'UK': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇬🇧' },
+            'US': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇺🇸' },
+            'IE': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇮🇪' }
+        };
+        
+        // Country to content mapping (translations)
+        const contentTranslations = {
+            'IT': {
+                title: "🚨 OFFERTA ESCLUSIVA: Trova Single Locali Ora!",
+                description: "Stiamo connettendo migliaia di single nella tua zona! Clicca qui sotto per vedere chi ti aspetta.",
+                button: "ISCRIVITI ORA - TROVA LA TUA ANIMA GEMELLA"
+            },
+            'ES': {
+                title: "🚨 OFERTA EXCLUSIVA: ¡Encuentra Solteros Locales Ahora!",
+                description: "¡Estamos conectando a miles de solteros en tu área! Haz clic abajo para ver quién está esperando conocerte.",
+                button: "ÚNETE AHORA - ENCUENTRA TU PAREJA"
+            },
+            'FR': {
+                title: "🚨 OFFRE EXCLUSIVE : Rencontrez des Célibataires Locaux Maintenant !",
+                description: "Nous connectons des milliers de célibataires dans votre région ! Cliquez ci-dessous pour voir qui vous attend.",
+                button: "REJOIGNEZ MAINTENANT - TROUVEZ VOTRE MATCH"
+            },
+            'DE': {
+                title: "🚨 EXKLUSIVES ANGEBOT: Finde jetzt lokale Singles!",
+                description: "Wir verbinden Tausende von Singles in Ihrer Nähe! Klicken Sie unten, um zu sehen, wer Sie kennenlernen möchte.",
+                button: "JETZT MITMACHEN - FINDEN SIE IHREN PARTNER"
+            },
+            'EN': {
+                title: "🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!",
+                description: "We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.",
+                button: "JOIN NOW - FIND YOUR MATCH"
+            }
+        };
+        
+        // Default content for countries not specifically translated
+        const defaultContent = contentTranslations['EN'];
+        
+        // Current offer (will be set after geo detection)
+        let currentOffer = null;
+        
+        // Detect country and update page
+        function detectCountry() {
+            document.getElementById('loading').style.display = 'block';
+            
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country;
+                    currentOffer = offerUrls[countryCode] || { 
+                        url: 'https://cjdahag.pixls.one/p/Ve0JG',
+                        flag: '🌎' 
+                    };
+                    
+                    updatePageContent(countryCode);
+                    document.getElementById('loading').style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error detecting country:', error);
+                    currentOffer = { 
+                        url: 'https://cjdahag.pixls.one/p/Ve0JG',
+                        flag: '🌎' 
+                    };
+                    updatePageContent('EN');
+                    document.getElementById('loading').style.display = 'none';
+                });
         }
-      });
+        
+        // Update page content based on country
+        function updatePageContent(countryCode) {
+            const content = contentTranslations[countryCode] || defaultContent;
+            
+            document.getElementById('title').textContent = content.title;
+            document.getElementById('description').textContent = content.description;
+            
+            const button = document.getElementById('cta-button');
+            const buttonText = document.getElementById('button-text');
+            buttonText.textContent = content.button;
+            
+            // Add country flag to button if available
+            if (currentOffer.flag) {
+                const flagSpan = document.createElement('span');
+                flagSpan.className = 'country-flag';
+                flagSpan.textContent = currentOffer.flag;
+                button.insertBefore(flagSpan, buttonText);
+            }
+        }
+        
+        // Redirect to offer
+        function redirectToOffer() {
+            if (currentOffer && currentOffer.url) {
+                window.location.href = currentOffer.url;
+            } else {
+                window.location.href = 'https://cjdahag.gettopost.com/c/1320abc6aa04e';
+            }
+        }
 
-    function redirectToOffer() {
-      const offer = offerUrls[countryCode] || offerUrls['US'];
-      window.location.href = offer;
-    }
+        // Match Feed Functionality
+        const CONFIG = {
+            maleNames: ["James", "David", "Michael", "Daniel", "Matthew", "Christopher"],
+            femaleNames: ["Emma", "Olivia", "Sophia", "Ava", "Isabella", "Mia"],
+            locations: ["New York", "Chicago", "Los Angeles", "Miami", "Seattle", "Rome", "Milan", "Naples", "Madrid", "Barcelona", "Valencia", "Paris", "Marseille", "Lyon", "Sydney", "Darwin", "Brisbane"],
+            apiEndpoint: "https://randomuser.me/api/",
+            fallbackMalePhoto: "https://i.imgur.com/mW3KEQa.jpg",
+            fallbackFemalePhoto: "https://i.imgur.com/Jf6eYbE.jpg",
+            displayDuration: 5000,
+            minInterval: 5000,
+            maxInterval: 8000
+        };
 
-    // Auto-scroll CTA into view after a few seconds
-    window.onload = () => {
-      setTimeout(() => {
-        document.getElementById('main').scrollIntoView({behavior:'smooth'});
-      }, 2500);
-    };
-  </script>
+        const photoCache = {
+            male: null,
+            female: null
+        };
+
+        async function fetchUserPhoto(gender) {
+            try {
+                const response = await fetch(`${CONFIG.apiEndpoint}?gender=${gender}&inc=picture&noinfo`);
+                const data = await response.json();
+                return data.results[0].picture.medium;
+            } catch (error) {
+                console.log(`Using fallback ${gender} photo`);
+                return gender === 'male' ? CONFIG.fallbackMalePhoto : CONFIG.fallbackFemalePhoto;
+            }
+        }
+
+        async function getPhoto(gender) {
+            if (photoCache[gender]) return photoCache[gender];
+            photoCache[gender] = await fetchUserPhoto(gender);
+            return photoCache[gender];
+        }
+
+        async function createMatchNotification() {
+            const maleFirst = Math.random() > 0.5;
+            const maleName = CONFIG.maleNames[Math.floor(Math.random() * CONFIG.maleNames.length)];
+            const femaleName = CONFIG.femaleNames[Math.floor(Math.random() * CONFIG.femaleNames.length)];
+            const location = CONFIG.locations[Math.floor(Math.random() * CONFIG.locations.length)];
+
+            const [malePhoto, femalePhoto] = await Promise.all([
+                getPhoto('male'),
+                getPhoto('female')
+            ]);
+
+            return `
+                <div class="match-notification">
+                    <div class="match-avatars">
+                        <img src="${maleFirst ? malePhoto : femalePhoto}" 
+                             alt="${maleFirst ? maleName : femaleName}" 
+                             class="match-avatar">
+                        <img src="${maleFirst ? femalePhoto : malePhoto}" 
+                             alt="${maleFirst ? femaleName : maleName}" 
+                             class="match-avatar">
+                    </div>
+                    <div class="match-details">
+                        <div class="match-text">
+                            ${maleFirst ? maleName : femaleName} & ${maleFirst ? femaleName : maleName} matched!
+                        </div>
+                        <div class="match-location">${location}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function showNewMatch() {
+            const feed = document.querySelector('.mini-match-feed');
+            const notificationHTML = await createMatchNotification();
+            
+            feed.innerHTML = notificationHTML;
+            
+            setTimeout(() => {
+                photoCache.male = null;
+                photoCache.female = null;
+                feed.innerHTML = '';
+            }, CONFIG.displayDuration);
+        }
+
+        function initMatchFeed() {
+            setTimeout(showNewMatch, 1000);
+            
+            const showNextMatch = () => {
+                showNewMatch();
+                const delay = Math.random() * (CONFIG.maxInterval - CONFIG.minInterval) + CONFIG.minInterval;
+                setTimeout(showNextMatch, delay);
+            };
+            
+            setTimeout(showNextMatch, CONFIG.maxInterval);
+            
+            getPhoto('male');
+            getPhoto('female');
+        }
+
+        // Update user counter
+        function updateUserCounter() {
+            setInterval(() => {
+                const baseUsers = 1274;
+                const randomAdd = Math.floor(Math.random() * 10);
+                document.getElementById('active-users').textContent = baseUsers + randomAdd;
+            }, 3000);
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            detectCountry();
+            initMatchFeed();
+            updateUserCounter();
+        });
+    </script>
+  
+    <!-- Histats.com tracking -->
+    <script type="text/javascript">
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4940299,4,0,0,0,00010000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+            hs.src = ('//s10.histats.com/js15_as.js');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+    <noscript>
+        <a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4940299&101" alt="invisible hit counter" border="0"></a>
+    </noscript>
 </body>
 </html>
