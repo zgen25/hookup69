@@ -1,210 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Find Local Singles Now - Exclusive Dating Offer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent: #FF4B2B;
-            --gradient: linear-gradient(to right, #FF416C, #FF4B2B);
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        body {
-            color: white;
-            background-color: #000;
-            position: relative;
-            overflow-x: hidden;
-        }
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 200%; height: 100%;
-            background: url('https://pornexplosion.com/assets/adultfriendfinder_members-208bf516822776b3d9194b1255a8ae4bbf902ed20f038a5f2057c5ecfcc8ef1e.jpg') repeat;
-            background-size: auto;
-            z-index: -2;
-            animation: scrollBg 20s linear infinite;
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: -1;
-        }
-        @keyframes scrollBg {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Find Local Singles Now - Exclusive Dating Offer</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;}
+    body {
+      color:white;
+      background:#000;
+      overflow-x:hidden;
+    }
+    body::before, body::after {
+      content:'';
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      z-index:-2;
+    }
+    body::before {
+      background:rgba(0,0,0,0.85);
+      z-index:-1;
+    }
+    body::after {
+      background:url('https://pornexplosion.com/assets/adultfriendfinder_members-208bf516822776b3d9194b1255a8ae4bbf902ed20f038a5f2057c5ecfcc8ef1e.jpg') repeat center;
+      background-size:auto;
+      animation:scroll 25s linear infinite;
+    }
+    @keyframes scroll {0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-        .container {
-            max-width: 480px;
-            margin: auto;
-            padding: 2rem 1.5rem;
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-        h1 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .couple-img {
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            background: var(--gradient);
-            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6);
-        }
-        .live-counter {
-            margin: 1.5rem 0;
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        .mini-match-feed {
-            position: fixed;
-            bottom: 1rem;
-            left: 1rem;
-            right: 1rem;
-            max-width: 340px;
-            margin: auto;
-            z-index: 10;
-        }
-        .match-notification {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            color: #000;
-            border-left: 5px solid var(--accent);
-            padding: 0.75rem;
-            border-radius: 10px;
-            margin-bottom: 0.5rem;
-            animation: slideUp 0.3s ease, fadeOut 0.3s ease 4s forwards;
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeOut {
-            to { opacity: 0; transform: translateY(-10px); }
-        }
+    .container {
+      max-width:500px;
+      margin:50px auto;
+      padding:20px;
+      background:rgba(0,0,0,0.8);
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 0 20px rgba(0,0,0,0.6);
+    }
+    .couple-img {
+      width:100%;
+      max-width:300px;
+      margin:0 auto 20px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.5);
+    }
+    h1 {font-size:24px;margin-bottom:15px;}
+    p {font-size:16px;margin-bottom:20px;line-height:1.4;}
 
-        @media screen and (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            p { font-size: 0.95rem; }
-            .btn { font-size: 1rem; padding: 0.9rem; }
-            .live-counter { font-size: 1.2rem; }
-        }
-    </style>
+    .btn {
+      padding:14px 20px;
+      background:linear-gradient(to right,#FF416C,#FF4B2B);
+      border:none;
+      color:white;
+      font-weight:bold;
+      border-radius:40px;
+      font-size:16px;
+      width:100%;
+      cursor:pointer;
+      box-shadow:0 5px 15px rgba(255,75,43,0.4);
+      transition:0.3s;
+    }
+    .btn:hover {transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,75,43,0.6);}
+
+    .live-counter {
+      font-size:26px;
+      color:#FF4B2B;
+      margin:15px auto;
+      font-weight:700;
+    }
+
+    .trust-badges {
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin:20px auto 10px;
+    }
+    .badge {
+      background:#1a1a1a;
+      border-radius:6px;
+      padding:8px 12px;
+      font-size:12px;
+      color:#ccc;
+      border:1px solid #333;
+    }
+
+    .timer {
+      font-size:20px;
+      margin-top:10px;
+      color:#FFD700;
+    }
+
+    .exit-popup {
+      display:none;
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      z-index:10000;
+      background:#111;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 0 20px rgba(255,75,43,0.6);
+      text-align:center;
+    }
+    .exit-popup p {margin-bottom:15px;}
+    .exit-popup .btn {max-width:300px;margin:0 auto;}
+
+    @media(max-width:600px){
+      .container {margin:20px 10px;}
+      h1 {font-size:20px;}
+      .live-counter {font-size:22px;}
+    }
+  </style>
 </head>
 <body>
-    <main class="container" id="main-container">
-        <img src="https://freefuckbook.app/images/fuckapp-logo-white.png" alt="Couple" class="couple-img">
-        <h1 id="title">🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!</h1>
-        <p id="description">We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.</p>
-        <button class="btn" onclick="redirectToOffer()" id="cta-button">
-            <span id="button-text">JOIN NOW - FIND YOUR MATCH</span>
-        </button>
-        <div class="live-counter">🔥 <span id="active-users">1274</span> people searching now!</div>
-    </main>
+  <div class="container" id="main-container">
+    <img src="https://freefuckbook.app/images/fuckapp-logo-white.png" alt="Couple" class="couple-img" />
+    <h1 id="title">🚨 EXCLUSIVE DATING OFFER: Find Local Singles Now!</h1>
+    <p id="description">We're connecting thousands of singles in your area! Click below to see who's waiting to meet you.</p>
+    <button class="btn" id="cta-button" onclick="redirectToOffer()">JOIN NOW - FIND YOUR MATCH</button>
 
-    <div class="mini-match-feed" id="feed"></div>
+    <div class="trust-badges">
+      <div class="badge">✔ Secure</div>
+      <div class="badge">🔥 100% Real Members</div>
+      <div class="badge">📍 Localized</div>
+    </div>
 
-    <script>
-        const offerUrls = {
-            'IT': { url: 'https://cjdahag.gettopost.com/c/72f5cc35ffba7', flag: '🇮🇹' },
-            'ES': { url: 'https://cjdahag.gettopost.com/c/0d917d83cc8b3', flag: '🇪🇸' },
-            'FR': { url: 'https://cjdahag.trckoffer.com/c/864c0d5abf439', flag: '🇫🇷' },
-            'AU': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇦🇺' },
-            'CA': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇨🇦' },
-            'CH': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇨🇭' },
-            'DE': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇩🇪' },
-            'NZ': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇳🇿' },
-            'UK': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇬🇧' },
-            'US': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇺🇸' },
-            'IE': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇮🇪' }
-        };
+    <div class="live-counter">🔥 <span id="active-users">1,254</span> searching near you</div>
+    <div class="timer">⏳ Offer expires in <span id="countdown">05:00</span></div>
+  </div>
 
-        const contentTranslations = {
-            'IT': { title: "🚨 OFFERTA ESCLUSIVA: Trova Single Locali Ora!", description: "Stiamo connettendo migliaia di single nella tua zona! Clicca qui sotto per vedere chi ti aspetta.", button: "ISCRIVITI ORA - TROVA LA TUA ANIMA GEMELLA" },
-            'ES': { title: "🚨 OFERTA EXCLUSIVA: ¡Encuentra Solteros Locales Ahora!", description: "¡Estamos conectando a miles de solteros en tu área! Haz clic abajo para ver quién está esperando conocerte.", button: "ÚNETE AHORA - ENCUENTRA TU PAREJA" },
-            'FR': { title: "🚨 OFFRE EXCLUSIVE : Rencontrez des Célibataires Locaux Maintenant !", description: "Nous connectons des milliers de célibataires dans votre région ! Cliquez ci-dessous pour voir qui vous attend.", button: "REJOIGNEZ MAINTENANT - TROUVEZ VOTRE MATCH" },
-            'DE': { title: "🚨 EXKLUSIVES ANGEBOT: Finde jetzt lokale Singles!", description: "Wir verbinden Tausende von Singles in Ihrer Nähe! Klicken Sie unten, um zu sehen, wer Sie kennenlernen möchte.", button: "JETZT MITMACHEN - FINDEN SIE IHREN PARTNER" }
-        };
+  <div class="exit-popup" id="exit-popup">
+    <p>Wait! Your match is just a click away 👇</p>
+    <button class="btn" onclick="redirectToOffer()">Take Me There</button>
+  </div>
 
-        function redirectToOffer() {
-            const countryCode = localStorage.getItem('geo') || 'US';
-            const offer = offerUrls[countryCode] || offerUrls['US'];
-            window.location.href = offer.url;
+  <script>
+    const offerUrls = {
+      'IT': { url: 'https://cjdahag.gettopost.com/c/72f5cc35ffba7', flag: '🇮🇹' },
+      'ES': { url: 'https://cjdahag.gettopost.com/c/0d917d83cc8b3', flag: '🇪🇸' },
+      'FR': { url: 'https://cjdahag.trckoffer.com/c/864c0d5abf439', flag: '🇫🇷' },
+      'AU': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇦🇺' },
+      'CA': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇨🇦' },
+      'CH': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇨🇭' },
+      'DE': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇩🇪' },
+      'NZ': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇳🇿' },
+      'UK': { url: 'https://cjdahag.gettopost.com/c/1320abc6aa04e', flag: '🇬🇧' },
+      'US': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇺🇸' },
+      'IE': { url: 'https://cjdahag.trckoffer.com/c/525601f705c5e', flag: '🇮🇪' }
+    };
+
+    const contentTranslations = {
+      'FR': {
+        title: "🚨 OFFRE EXCLUSIVE : Rencontrez des Célibataires Locaux Maintenant !",
+        description: "Nous connectons des milliers de célibataires dans votre région ! Cliquez ci-dessous pour voir qui vous attend.",
+        button: "REJOIGNEZ MAINTENANT - TROUVEZ VOTRE MATCH"
+      },
+      'IT': {
+        title: "🚨 OFFERTA ESCLUSIVA: Trova Single Locali Ora!",
+        description: "Stiamo connettendo migliaia di single nella tua zona! Clicca qui sotto per vedere chi ti aspetta.",
+        button: "ISCRIVITI ORA - TROVA LA TUA ANIMA GEMELLA"
+      },
+      'ES': {
+        title: "🚨 OFERTA EXCLUSIVA: ¡Encuentra Solteros Locales Ahora!",
+        description: "¡Estamos conectando a miles de solteros en tu área! Haz clic abajo para ver quién está esperando conocerte.",
+        button: "ÚNETE AHORA - ENCUENTRA TU PAREJA"
+      }
+    };
+
+    let countryCode = 'US'; // fallback
+
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => {
+        countryCode = data.country || 'US';
+        if (offerUrls[countryCode]) {
+          if (contentTranslations[countryCode]) {
+            document.getElementById('title').textContent = contentTranslations[countryCode].title;
+            document.getElementById('description').textContent = contentTranslations[countryCode].description;
+            document.getElementById('cta-button').textContent = contentTranslations[countryCode].button;
+          }
         }
+      });
 
-        fetch('https://ipapi.co/json')
-            .then(res => res.json())
-            .then(data => {
-                const country = data.country_code || 'US';
-                localStorage.setItem('geo', country);
-                const content = contentTranslations[country];
-                const offer = offerUrls[country];
-                if (content) {
-                    document.getElementById('title').innerText = content.title;
-                    document.getElementById('description').innerText = content.description;
-                    document.getElementById('button-text').innerText = content.button;
-                }
-            });
+    function redirectToOffer() {
+      const dest = offerUrls[countryCode]?.url || offerUrls['US'].url;
+      window.location.href = dest;
+    }
 
-        // Match feed fake notifications
-        const fakeMatches = [
-            { names: "Anna & Leo", location: "Rome" },
-            { names: "Sophie & Max", location: "Berlin" },
-            { names: "Camille & Lucas", location: "Paris" },
-            { names: "Emily & Jake", location: "New York" }
-        ];
+    // Countdown logic
+    let timer = 300; // 5 mins
+    const countdown = document.getElementById("countdown");
+    setInterval(() => {
+      const min = Math.floor(timer / 60);
+      const sec = timer % 60;
+      countdown.textContent = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+      timer--;
+      if (timer < 0) timer = 300;
+    }, 1000);
 
-        function showMatch() {
-            const feed = document.getElementById('feed');
-            const match = fakeMatches[Math.floor(Math.random() * fakeMatches.length)];
-            const div = document.createElement('div');
-            div.className = 'match-notification';
-            div.innerHTML = `<div style="margin-right:10px;">❤️</div><div><strong>${match.names}</strong><div style="font-size:0.85rem;color:#555">📍 ${match.location}</div></div>`;
-            feed.appendChild(div);
-            setTimeout(() => div.remove(), 5000);
-        }
-        setInterval(showMatch, 6000);
-    </script>
+    // Exit intent
+    document.addEventListener("mouseout", function(e) {
+      if (e.clientY < 10) {
+        document.getElementById('exit-popup').style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
