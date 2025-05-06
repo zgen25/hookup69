@@ -1,82 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Local Singles Now - Exclusive Dating Offer</title>
+    <title>Connecting to Local Singles...</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            margin: 0; padding: 0; height: 100%; width: 100%; 
-            overflow-x: hidden; position: relative; color: white;
-            background: rgba(0, 0, 0, 0.85);
+            margin: 0; padding: 20px; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background: #111; 
+            color: white;
         }
-        .container {
-            max-width: 600px; margin: 20px auto; padding: 30px;
-            border-radius: 15px; text-align: center;
+        img { 
+            max-width: 100%; 
+            border-radius: 8px; 
+            margin: 20px 0;
         }
-        .couple-img {
-            width: 100%; max-width: 400px; margin: 0 auto 25px;
-            display: block; border-radius: 10px;
-        }
-        h1 { font-size: 28px; margin-bottom: 20px; }
-        p { font-size: 18px; margin-bottom: 30px; line-height: 1.5; }
     </style>
     <script>
-        // Minimal offer mapping
+        // Offer URLs with referrer
         const offers = {
-            'IT':'https://cjdahag.gettopost.com/c/72f5cc35ffba7',
-            'ES':'https://cjdahag.gettopost.com/c/0d917d83cc8b3',
-            'FR':'https://cjdahag.trckoffer.com/c/864c0d5abf439',
-            'AU':'https://cjdahag.trckoffer.com/c/525601f705c5e',
-            'CA':'https://cjdahag.trckoffer.com/c/525601f705c5e',
-            'CH':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-            'DE':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-            'NZ':'https://cjdahag.trckoffer.com/c/525601f705c5e',
-            'UK':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
-            'US':'https://cjdahag.trckoffer.com/c/525601f705c5e',
-            'IE':'https://cjdahag.trckoffer.com/c/525601f705c5e'
+            'IT':'https://cjdahag.gettopost.com/c/72f5cc35ffba7?ref=zgen25.github.io/hookup69',
+            'ES':'https://cjdahag.gettopost.com/c/0d917d83cc8b3?ref=zgen25.github.io/hookup69',
+            'FR':'https://cjdahag.trckoffer.com/c/864c0d5abf439?ref=zgen25.github.io/hookup69',
+            'AU':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'CA':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'CH':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'DE':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'NZ':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'UK':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'US':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'IE':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'default':'https://cjdahag.pixls.one/p/Ve0JG?ref=zgen25.github.io/hookup69'
         };
 
-        // Fastest possible redirect logic
+        // Start IP detection immediately
         (function() {
-            // 1. First try browser language (instant)
-            const lang = navigator.language || navigator.userLanguage;
-            const langMatch = lang && Object.keys(offers).find(c => lang.includes(c));
-            if (langMatch) {
-                window.stop(); // Stop loading any other resources
-                location.replace(offers[langMatch] + '?ref=https://zgen25.github.io/hookup69/');
-                return;
-            }
+            // Show content briefly while detecting
+            document.body.innerHTML = `
+                <h2>Finding Local Matches...</h2>
+                <img src="https://myteenwebcam.com/fapp/gifs/dce5eae13525b452c90c6374c5611bb4.gif" 
+                     alt="Connecting" width="300">
+                <p>Searching for singles in your area</p>
+            `;
 
-            // 2. Fallback to IP detection (slightly slower)
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://ipapi.co/json/', true);
-            xhr.timeout = 1000; // 1 second timeout
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    const data = JSON.parse(xhr.responseText);
-                    window.stop();
-                    location.replace((offers[data.country] || 'https://cjdahag.pixls.one/p/Ve0JG') + 
-                                 '?ref=https://zgen25.github.io/hookup69/');
-                }
-            };
-            xhr.ontimeout = xhr.onerror = function() {
-                window.stop();
-                location.replace('https://cjdahag.pixls.one/p/Ve0JG?ref=https://zgen25.github.io/hookup69/');
-            };
-            xhr.send();
+            // Fast IP detection with fallback
+            fetch('https://ipapi.co/json/')
+                .then(r => r.json())
+                .then(data => {
+                    const url = offers[data.country] || offers['default'];
+                    location.replace(url);
+                })
+                .catch(() => {
+                    location.replace(offers['default']);
+                });
         })();
     </script>
 </head>
-<body>
-    <div class="container">
-        <img src="https://myteenwebcam.com/fapp/gifs/dce5eae13525b452c90c6374c5611bb4.gif" 
-             alt="Happy Couple" class="couple-img">
-        <h1>Finding Local Singles Near You...</h1>
-        <p>We're connecting you with compatible matches in your area</p>
-    </div>
-</body>
+<body></body>
 </html>
 
 
