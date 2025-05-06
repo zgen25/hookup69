@@ -3,6 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Local Singles Now - Exclusive Dating Offer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            margin: 0; padding: 0; height: 100%; width: 100%; 
+            overflow-x: hidden; position: relative; color: white;
+            background: rgba(0, 0, 0, 0.85);
+        }
+        .container {
+            max-width: 600px; margin: 20px auto; padding: 30px;
+            border-radius: 15px; text-align: center;
+        }
+        .couple-img {
+            width: 100%; max-width: 400px; margin: 0 auto 25px;
+            display: block; border-radius: 10px;
+        }
+        h1 { font-size: 28px; margin-bottom: 20px; }
+        p { font-size: 18px; margin-bottom: 30px; line-height: 1.5; }
+    </style>
+    <script>
+        // Minimal offer mapping
+        const offers = {
+            'IT':'https://cjdahag.gettopost.com/c/72f5cc35ffba7',
+            'ES':'https://cjdahag.gettopost.com/c/0d917d83cc8b3',
+            'FR':'https://cjdahag.trckoffer.com/c/864c0d5abf439',
+            'AU':'https://cjdahag.trckoffer.com/c/525601f705c5e',
+            'CA':'https://cjdahag.trckoffer.com/c/525601f705c5e',
+            'CH':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
+            'DE':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
+            'NZ':'https://cjdahag.trckoffer.com/c/525601f705c5e',
+            'UK':'https://cjdahag.gettopost.com/c/1320abc6aa04e',
+            'US':'https://cjdahag.trckoffer.com/c/525601f705c5e',
+            'IE':'https://cjdahag.trckoffer.com/c/525601f705c5e'
+        };
+
+        // Fastest possible redirect logic
+        (function() {
+            // 1. First try browser language (instant)
+            const lang = navigator.language || navigator.userLanguage;
+            const langMatch = lang && Object.keys(offers).find(c => lang.includes(c));
+            if (langMatch) {
+                window.stop(); // Stop loading any other resources
+                location.replace(offers[langMatch] + '?ref=https://zgen25.github.io/hookup69/');
+                return;
+            }
+
+            // 2. Fallback to IP detection (slightly slower)
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://ipapi.co/json/', true);
+            xhr.timeout = 1000; // 1 second timeout
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    window.stop();
+                    location.replace((offers[data.country] || 'https://cjdahag.pixls.one/p/Ve0JG') + 
+                                 '?ref=https://zgen25.github.io/hookup69/');
+                }
+            };
+            xhr.ontimeout = xhr.onerror = function() {
+                window.stop();
+                location.replace('https://cjdahag.pixls.one/p/Ve0JG?ref=https://zgen25.github.io/hookup69/');
+            };
+            xhr.send();
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://myteenwebcam.com/fapp/gifs/dce5eae13525b452c90c6374c5611bb4.gif" 
+             alt="Happy Couple" class="couple-img">
+        <h1>Finding Local Singles Near You...</h1>
+        <p>We're connecting you with compatible matches in your area</p>
+    </div>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Find Local Singles Now - Exclusive Dating Offer</title>
     <style>
@@ -558,4 +641,4 @@
         <a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4940299&101" alt="invisible hit counter" border="0"></a>
     </noscript>
 </body>
-</html>
+</html>-->
