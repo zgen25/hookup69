@@ -2,95 +2,75 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Connecting to Local Singles...</title>
+    <title>Finding Local Singles...</title>
     <script>
-        // Immediate redirect attempt
-        (function() {
-            // Offer URLs with referrer
-            const offers = {
-                'IT':'https://cjdahag.gettopost.com/c/72f5cc35ffba7?ref=zgen25.github.io/hookup69',
-                'ES':'https://cjdahag.gettopost.com/c/0d917d83cc8b3?ref=zgen25.github.io/hookup69',
-                'FR':'https://cjdahag.trckoffer.com/c/864c0d5abf439?ref=zgen25.github.io/hookup69',
-                'AU':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
-                'CA':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
-                'CH':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
-                'DE':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
-                'NZ':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
-                'UK':'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
-                'US':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
-                'IE':'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
-                'default':'https://cjdahag.pixls.one/p/Ve0JG?ref=zgen25.github.io/hookup69'
-            };
+        // Offer URLs configuration
+        const OFFER_URLS = {
+            'IT': 'https://cjdahag.gettopost.com/c/72f5cc35ffba7?ref=zgen25.github.io/hookup69',
+            'ES': 'https://cjdahag.gettopost.com/c/0d917d83cc8b3?ref=zgen25.github.io/hookup69',
+            'FR': 'https://cjdahag.trckoffer.com/c/864c0d5abf439?ref=zgen25.github.io/hookup69',
+            'AU': 'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'CA': 'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'CH': 'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'DE': 'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'NZ': 'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'UK': 'https://cjdahag.gettopost.com/c/1320abc6aa04e?ref=zgen25.github.io/hookup69',
+            'US': 'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69',
+            'IE': 'https://cjdahag.trckoffer.com/c/525601f705c5e?ref=zgen25.github.io/hookup69'
+        };
+        const DEFAULT_URL = 'https://cjdahag.pixls.one/p/Ve0JG?ref=zgen25.github.io/hookup69';
 
-            // Create minimal visible content
-            document.write(`
-                <style>
-                    body { 
-                        margin: 0; padding: 20px; 
-                        font-family: Arial, sans-serif; 
-                        text-align: center; 
-                        background: #111; 
-                        color: white;
-                    }
-                    img { 
-                        max-width: 100%; 
-                        border-radius: 8px; 
-                        margin: 20px 0;
-                    }
-                </style>
-                <h2>Finding Local Matches...</h2>
-                <img src="https://myteenwebcam.com/fapp/gifs/dce5eae13525b452c90c6374c5611bb4.gif" 
-                     alt="Connecting" width="300">
-                <p>Searching for singles in your area</p>
-            `);
-
-            // Primary IP detection
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://ipapi.co/json/', true);
-            xhr.timeout = 1500; // 1.5 second timeout
-            
-            xhr.onload = function() {
-                if (this.status === 200) {
-                    try {
-                        const data = JSON.parse(this.responseText);
-                        window.location.replace(offers[data.country] || offers['default']);
-                    } catch {
-                        window.location.replace(offers['default']);
-                    }
-                } else {
-                    window.location.replace(offers['default']);
+        // Display loading content immediately
+        document.write(`
+            <style>
+                body {
+                    margin: 0;
+                    padding: 20px;
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    background: #111;
+                    color: white;
                 }
-            };
-            
-            xhr.ontimeout = xhr.onerror = function() {
-                window.location.replace(offers['default']);
-            };
-            
-            xhr.send();
-
-            // Backup timeout in case everything fails
-            setTimeout(function() {
-                if (!window.location.href.includes('cjdahag')) {
-                    window.location.replace(offers['default']);
+                img {
+                    max-width: 100%;
+                    border-radius: 8px;
+                    margin: 20px 0;
                 }
-            }, 3000);
-        })();
-    </script>
+            </style>
+            <h2>Finding Local Matches...</h2>
+            <img src="https://myteenwebcam.com/fapp/gifs/dce5eae13525b452c90c6374c5611bb4.gif" 
+                 alt="Connecting" width="300">
+            <p>Searching for singles in your area</p>
+        `);
 
-    <script type="text/javascript">
-        var _Hasync= _Hasync|| [];
-        _Hasync.push(['Histats.start', '1,4940299,4,0,0,0,00010000']);
-        _Hasync.push(['Histats.fasi', '1']);
-        _Hasync.push(['Histats.track_hits', '']);
-        (function() {
-            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-            hs.src = ('//s10.histats.com/js15_as.js');
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-        })();
+        // Main redirection function using freeipapi.com
+        function redirectToOffer() {
+            fetch('https://freeipapi.com/api/json/')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    const countryCode = data.countryCode;
+                    const offerUrl = OFFER_URLS[countryCode] || DEFAULT_URL;
+                    window.location.href = offerUrl;
+                })
+                .catch(error => {
+                    console.log('IP detection failed, using default');
+                    window.location.href = DEFAULT_URL;
+                });
+        }
+
+        // Start the redirection process
+        redirectToOffer();
+
+        // Final fallback in case everything fails
+        setTimeout(() => {
+            if (!window.location.href.includes('cjdahag')) {
+                window.location.href = DEFAULT_URL;
+            }
+        }, 3000);
     </script>
-    <noscript>
-        <a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4940299&101" alt="invisible hit counter" border="0"></a>
-    </noscript>
 </head>
 <body></body>
 </html>
